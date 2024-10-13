@@ -1,3 +1,5 @@
 # Ignore __pycache__ directories under src and tests
 myenv/*
 .DS_Store
+.promptflow
+__pycache__

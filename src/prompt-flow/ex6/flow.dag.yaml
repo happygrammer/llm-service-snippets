@@ -1,0 +1,36 @@
+inputs:
+  user_input:
+    type: string
+
+outputs:
+  final_result:
+    type: object
+    reference: ${add_three.output}
+
+nodes:
+- name: add_one
+  type: python
+  source:
+    path: process_input.py
+  inputs:
+    step: "one"
+    input_text: ${inputs.user_input}
+
+- name: add_two
+  type: python
+  source:
+    path: process_input.py
+  inputs:
+    step: "two"
+    input_text: ${add_one.output.result}
+
+- name: add_three
+  type: python
+  source:
+    path: process_input.py
+  inputs:
+    step: "three"
+    input_text: ${add_two.output.result}
+
+environment:
+  python_requirements_txt: requirements.txt
