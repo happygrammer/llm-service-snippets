@@ -1,0 +1,33 @@
+inputs:
+  user_input:
+    type: string
+
+outputs:
+  final_result:
+    type: object
+    reference: ${add_three.output}
+
+nodes:
+- name: add_one
+  type: python
+  source:
+    path: add_one.py
+  inputs:
+    input_text: ${inputs.user_input}
+
+- name: add_two
+  type: python
+  source:
+    path: add_two.py
+  inputs:
+    input_text: ${add_one.output.result}
+
+- name: add_three
+  type: python
+  source:
+    path: add_three.py
+  inputs:
+    input_text: ${add_two.output.result}
+
+environment:
+  python_requirements_txt: requirements.txt

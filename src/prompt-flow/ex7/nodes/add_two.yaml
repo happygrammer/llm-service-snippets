@@ -1,0 +1,7 @@
+name: add_two
+type: python
+source:
+  path: ../process_input.py
+inputs:
+  step: "two"
+  input_text: ${add_one.output.result}

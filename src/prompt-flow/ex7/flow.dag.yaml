@@ -1,0 +1,28 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+inputs:
+  user_input:
+    type: string
+
+outputs:
+  final_result:
+    type: object
+    reference: ${add_three.output}
+
+nodes:
+- name: add_one
+  type: standard
+  source:
+    file: nodes/add_one.yaml
+
+- name: add_two
+  type: standard
+  source:
+    file: nodes/add_two.yaml
+
+- name: add_three
+  type: standard
+  source:
+    file: nodes/add_three.yaml
+
+environment:
+  python_requirements_txt: requirements.txt

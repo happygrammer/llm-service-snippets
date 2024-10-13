@@ -1,0 +1,7 @@
+name: add_three
+type: python
+source:
+  path: ../process_input.py
+inputs:
+  step: "three"
+  input_text: ${add_two.output.result}

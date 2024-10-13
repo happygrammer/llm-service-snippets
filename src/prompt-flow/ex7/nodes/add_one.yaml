@@ -1,0 +1,7 @@
+name: add_one
+type: python
+source:
+  path: ../process_input.py
+inputs:
+  step: "one"
+  input_text: ${inputs.user_input}
