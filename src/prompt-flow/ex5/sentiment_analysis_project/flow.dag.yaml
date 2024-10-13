@@ -1,0 +1,19 @@
+inputs:
+  user_feedback:
+    type: string
+
+outputs:
+  result:
+    type: object
+    reference: ${process_feedback.output}
+
+nodes:
+- name: process_feedback
+  type: python
+  source:
+    path: sentiment_analysis.py
+  inputs:
+    user_feedback: ${inputs.user_feedback}
+
+environment:
+  python_requirements_txt: requirements.txt
