@@ -4,9 +4,9 @@
 
 ## 파일 구조
 
-- [예제1. Prompt Flow 기본 사용법](./ex1/)
-- [예제2. Prompt Flow Jinja 템플릿 사용법](./ex2/)
-- [예제3. Prompt Flow Jinja 템플릿 사용법](./ex3/)
+- [예제1. Prompt Flow 데코레이터 선언](./ex1/)
+- [예제2. Jinja 템플릿 사용법](./ex2/)
+- [예제3. Jinja 템플릿 TODO 목록 예시](./ex3/)
 - [예제4. Prompt Flow 데코레이터 선언](./ex4)
 - [예제5. Prompt Flow UI 사용법](./ex5)
 - [예제6. Prompt Flow yaml 기본예시](./ex6)
