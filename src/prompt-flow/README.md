@@ -14,3 +14,8 @@
 - [예제8. Prompt Flow yaml 1개 + python N개](./ex8)
 - [예제9. Prompt Flow 온도 변환 예제](./ex9)
 - [예제10. Prompt Flow를 pf 명령어가 아닌 python 스크립트로 실행하는 예제](./ex10)
+
+## 관련 문서
+
+- [배포 관련](https://microsoft.github.io/promptflow/how-to-guides/deploy-a-flow/deploy-using-dev-server.html) : pf 명령어로 서버 형태로 띄워서 배포를 수행할 수 있음.
+- [스트리밍 관련](https://microsoft.github.io/promptflow/how-to-guides/enable-streaming-mode.html) : 스트리밍]형태로 flow를 생성할 수 있음.
