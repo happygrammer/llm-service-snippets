@@ -27,7 +27,7 @@ def process_input(step: str, input_text: str) -> dict:
         }
     else:
         raise ValueError(f"Unknown step: {step}")
-    
+
     return {"result": result}
 
 # 테스트용 코드

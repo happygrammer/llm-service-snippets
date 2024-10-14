@@ -34,29 +34,29 @@ def manage_todo_list(action: str, task: str = "", todos: List[Dict[str, str]] = 
         message = f"Current Todo List:\n{formatted_list}"
     else:
         message = "Invalid action. Use 'add', 'complete', or 'list'."
-    
+
     return {"message": message, "todos": todos}
 
 # 예시 실행
 if __name__ == "__main__":
     todos = []
-    
+
     # 추가
     result = manage_todo_list("add", "apple", todos)
     print(result["message"])
-    
+
     # 추가
     result = manage_todo_list("add", "banana", result["todos"])
     print(result["message"])
-    
+
     # 추가된 항목에 대한 리스트 출력
     result = manage_todo_list("list", todos=result["todos"])
     print(result["message"])
-    
+
     # 완료로 상태 업데이트
     result = manage_todo_list("complete", "apple", result["todos"])
     print(result["message"])
-    
+
     # 리스트 출력
     result = manage_todo_list("list", todos=result["todos"])
     print(result["message"])

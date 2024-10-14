@@ -12,3 +12,5 @@
 - [예제6. Prompt Flow yaml 기본예시](./ex6)
 - [예제7. Prompt Flow yaml N개 + python 1개](./ex7)
 - [예제8. Prompt Flow yaml 1개 + python N개](./ex8)
+- [예제9. Prompt Flow 온도 변환 예제](./ex9)
+- [예제10. Prompt Flow를 pf 명령어가 아닌 python 스크립트로 실행하는 예제](./ex10)

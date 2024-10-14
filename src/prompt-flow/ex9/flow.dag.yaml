@@ -1,0 +1,33 @@
+inputs:
+  celsius_temp:
+    type: string  # float 대신 string으로 변경
+
+outputs:
+  weather_description:
+    type: object
+    reference: ${describe_weather.output}
+
+nodes:
+- name: convert_to_fahrenheit
+  type: python
+  source:
+    path: convert_to_fahrenheit.py
+  inputs:
+    celsius: ${inputs.celsius_temp}
+
+- name: round_temperature
+  type: python
+  source:
+    path: round_temperature.py
+  inputs:
+    temperature: ${convert_to_fahrenheit.output.fahrenheit}
+
+- name: describe_weather
+  type: python
+  source:
+    path: describe_weather.py
+  inputs:
+    fahrenheit: ${round_temperature.output.rounded_temp}
+
+environment:
+  python_requirements_txt: requirements.txt

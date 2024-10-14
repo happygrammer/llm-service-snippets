@@ -26,17 +26,17 @@ def analyze_sentiment(text: str) -> Literal["positive", "neutral", "negative"]:
     """
     positive_words = ["좋아", "훌륭해", "멋져", "행복해", "감사해"]
     negative_words = ["나빠", "슬퍼", "화나", "실망", "후회"]
-    
+
     positive_count = sum(word in text for word in positive_words)
     negative_count = sum(word in text for word in negative_words)
-    
+
     if positive_count > negative_count:
         sentiment = "positive"
     elif negative_count > positive_count:
         sentiment = "negative"
     else:
         sentiment = "neutral"
-    
+
     logging.info(f"Sentiment analysis result: {sentiment}")
     return sentiment
 
@@ -66,7 +66,7 @@ def process_feedback(user_feedback: str) -> Dict[str, str]:
     text_analysis = analyze_text(user_feedback)
     sentiment = analyze_sentiment(user_feedback)
     response = generate_response(sentiment)
-    
+
     result = {
         "original_feedback": user_feedback,
         "word_count": str(text_analysis["word_count"]),
@@ -84,7 +84,7 @@ if __name__ == "__main__":
         "사용하기가 너무 어려워요. 실망했습니다.",
         "그저 그래요. 특별한 점은 없네요."
     ]
-    
+
     for feedback in feedbacks:
         result = process_feedback(feedback)
         print(f"피드백: {result['original_feedback']}")
